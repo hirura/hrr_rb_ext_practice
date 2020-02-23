@@ -3,7 +3,7 @@ RSpec.describe HrrRbExtPractice do
     expect(HrrRbExtPractice::VERSION).not_to be nil
   end
 
-  it "does something useful" do
-    expect(false).to eq(true)
+  it "is instantiatable" do
+    expect(described_class.new.class).to eq(described_class)
   end
 end
