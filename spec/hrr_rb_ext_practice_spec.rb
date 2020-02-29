@@ -40,4 +40,14 @@ RSpec.describe HrrRbExtPractice do
       end
     end
   end
+
+  describe "#syscall_error" do
+    it "raises SystemCallError" do
+      expect{described_class.syscall_error}.to raise_error SystemCallError
+    end
+
+    it "raises Errno::ENOENT" do
+      expect{described_class.syscall_error}.to raise_error Errno::ENOENT
+    end
+  end
 end
