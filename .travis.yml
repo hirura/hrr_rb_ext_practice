@@ -1,6 +1,11 @@
 ---
 language: ruby
 cache: bundler
+dist:
+  - precise
+  - trusty
+  - xenial
+  - bionic
 rvm:
   - 2.0
   - 2.1
@@ -12,6 +17,31 @@ rvm:
   - 2.7
   - ruby-head
 jobs:
+  include:
+    - rvm: 2.0
+      dist: bionic
+    - rvm: 2.1
+      dist: bionic
+    - rvm: 2.2
+      dist: bionic
+    - rvm: 2.3
+      dist: bionic
+    - rvm: 2.4
+      dist: bionic
+    - rvm: 2.5
+      dist: bionic
+    - rvm: 2.6
+      dist: bionic
+    - rvm: 2.7
+      dist: precise
+    - rvm: 2.7
+      dist: trusty
+    - rvm: 2.7
+      dist: xenial
+    - rvm: 2.7
+      dist: bionic
+    - rvm: ruby-head
+      dist: bionic
   allow_failures:
   - rvm: ruby-head
 before_install:
