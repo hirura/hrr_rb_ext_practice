@@ -22,8 +22,8 @@ before_install:
 install:
   - bundle install
 before_script:
-  - bundle exec rake clean
+  - bundle exec rake --trace clean
 script:
-  - bundle exec rake compile spec
+  - bundle exec rake --trace compile spec
 after_script:
-  - bundle exec rake clean
+  - bundle exec rake --trace clean
