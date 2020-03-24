@@ -1,11 +1,7 @@
 ---
 language: ruby
 cache: bundler
-dist:
-  - precise
-  - trusty
-  - xenial
-  - bionic
+os: linux
 rvm:
   - 2.0
   - 2.1
