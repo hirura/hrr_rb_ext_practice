@@ -41,6 +41,12 @@ RSpec.describe HrrRbExtPractice do
     end
   end
 
+  describe ".singleton_class_instance_method" do
+    it "returns a string" do
+      expect(described_class.singleton_class_instance_method).to eq("singleton class instance method")
+    end
+  end
+
   describe "#syscall_error" do
     it "raises SystemCallError" do
       expect{described_class.syscall_error}.to raise_error SystemCallError
