@@ -47,6 +47,28 @@ RSpec.describe HrrRbExtPractice do
     end
   end
 
+  describe ".singleton_class_private_method" do
+    context "when called as a singleton method" do
+      it "raises NoMethodError" do
+        expect{described_class.private_method}.to raise_error NoMethodError
+      end
+    end
+
+    context "when called within the context of class" do
+      let(:klass){
+        klass = described_class
+        def klass.call_private_method
+          singleton_class_private_method
+        end
+        klass
+      }
+
+      it "returns a string" do
+        expect(klass.call_private_method).to eq("singleton class private method")
+      end
+    end
+  end
+
   describe "#syscall_error" do
     it "raises SystemCallError" do
       expect{described_class.syscall_error}.to raise_error SystemCallError
